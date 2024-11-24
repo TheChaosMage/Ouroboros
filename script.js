@@ -21,6 +21,7 @@ let age = 0
 let karma = 1
 let people_hurt = 0
 let people_helped = 0
+let enlightened = false
 
 
 // story arrays
@@ -95,7 +96,7 @@ function start(){
     body.append(hero_button)
     body.append(sage_button)
     body.append(villain_button)
-    if(karma<0){
+    if(enlightened){
         body.append(TimeTravel_button)
         TimeTravel_button.textContent = "Reverse time"
     }
@@ -116,7 +117,9 @@ function death(){
     start_button.textContent = "Reincarnate?"
     age = 0
     ego = 2
-
+    if(karma<0 && age >7){
+        enlightened = true
+    }
 }
 
 
